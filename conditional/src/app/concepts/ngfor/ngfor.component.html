@@ -1,0 +1,54 @@
+<h3>ngFor</h3>
+
+<ul>
+    <li *ngFor="let item of employeesall">
+        {{item.name}} | {{item.age}}
+    </li>
+</ul>
+
+
+<table width="100%">
+    <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Dept</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="
+    let item of employeesall; 
+    let i = index;
+    first as f;
+    let lastitem =last 
+    let o =odd 
+    let e =even " [ngClass]="{
+        'first':f,
+        'last':lastitem,
+        'odd':o,
+        'even':e
+    }">
+        <th>{{i+1}}</th>
+        <th>{{item.name}}</th>
+        <th>{{item.age}}</th>
+        <th>{{item.Department}}</th>
+        <th>{{item.salary}}</th>
+
+    </tr>
+
+</table>
+
+<button class="btn btn-primary">submit</button>
+
+<br><br>
+2. Conditional Logic with ngFor
+<br>
+<div>
+    <div *ngFor="let item of employeesall">
+        <div *ngIf="item.age>=10">
+            {{item.name}} | {{item.age}}
+            <div class="nested">
+                <div *ngFor="let skill of item.skills">{{skill}}</div>
+            </div>
+
+        </div>
+    </div>

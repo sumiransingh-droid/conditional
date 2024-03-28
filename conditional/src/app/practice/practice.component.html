@@ -1,0 +1,18 @@
+<p>practice works!</p>
+
+<button (click)="counter('add')">++</button>
+count: {{count}}
+<button (click)="counter('minus')" >--</button>
+
+
+<button (click)="plus()">plus</button> {{count1}}
+
+<h1>If Else</h1>
+
+<h1 *ngIf="show; then ifblock else elseblock"></h1>
+<ng-template #ifblock>
+    <h3>if condition</h3>
+</ng-template>
+<ng-template #elseblock>
+    <h3>else block</h3>
+</ng-template>

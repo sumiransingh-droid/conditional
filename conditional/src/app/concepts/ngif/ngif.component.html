@@ -1,0 +1,56 @@
+<h3>ngIf</h3>
+<div *ngIf="isLoggedIn">
+    <h4>Welcome, Users! </h4>
+    <button>Logout</button>
+</div>
+<br>
+<div *ngIf="!isLoggedIn">
+    <h4>Please Log In</h4>
+    <button>LogIn</button>
+</div>
+
+<br><br>
+<div *ngIf="emp">
+    <strong>Name:</strong> {{emp.name}}<br>
+    <strong>Age:</strong> {{emp.age}}<br>
+    <strong>Position:</strong> {{emp.position}}<br>
+</div>
+<br>
+<div *ngIf="!emp">
+    No Employee Data
+</div>
+
+
+3. Else and Then:
+<br><br>
+<div *ngIf="employee.active; else elseblock">
+    <strong>Name:</strong> {{employee.name}}<br>
+    <strong>Age:</strong> {{employee.age}}<br>
+    <strong>Position:</strong> {{employee.position}}<br>
+    <button (click)="employee.active=false">Inactive Employee</button>
+</div>
+<br>
+<ng-template #elseblock>
+    Employee not active <br>
+    <button (click)="employee.active=true">Active Employee</button>
+
+</ng-template>
+
+
+<br><br>
+<div *ngIf="employee.active; then thenblock else elseblock">
+    
+</div>
+<ng-template #thenblock>
+    <strong>Name:</strong> {{employee.name}}<br>
+    <strong>Age:</strong> {{employee.age}}<br>
+    <strong>Position:</strong> {{employee.position}}<br>
+    <button (click)="employee.active=false">Inactive Employee</button>
+</ng-template>
+<br>
+<ng-template #elseblock>
+    Employee not active <br>
+    <button (click)="employee.active=true">Active Employee</button>
+
+</ng-template>
+
